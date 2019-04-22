@@ -1,0 +1,37 @@
+CREATE SCHEMA phonebookdb;
+
+USE phonebookdb;
+
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE user(
+userID INT NOT NULL AUTO_INCREMENT,
+firstName VARCHAR(15) NOT NULL,
+lastName VARCHAR(15) NOT NULL,
+password VARCHAR(20) NOT NULL,
+PRIMARY KEY(userID));
+
+DROP TABLE IF EXISTS phonebook;
+
+CREATE TABLE phonebook(
+ID INT NOT NULL AUTO_INCREMENT,
+firstName VARCHAR(15) NOT NULL,
+lastName VARCHAR(15) NOT NULL,
+phone VARCHAR(20) NOT NULL,
+mobile VARCHAR(20),
+userID INT NOT NULL,
+PRIMARY KEY(ID),
+FOREIGN KEY(userID) REFERENCES user(userID));
+
+SELECT * FROM user;
+
+SELECT * FROM phonebook;
+
+
+
+
+
+
+
+
+
